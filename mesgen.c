@@ -118,7 +118,7 @@ int main() {
         "Sometimes you forget how amazing you are."
     };
     for (i = 0; i < n; i++) {
-        choice = rand() % 100 + 1;  // random number between 1 and 100
+        choice = rand() % 100 + 1; 
         printf("\nMessage:\n%s\n", messages[choice]);
     }
 
