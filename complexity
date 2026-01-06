@@ -1,0 +1,97 @@
+<------------------------------------------------------Sorting--------------------------------------------------->
+| Algorithm          | Best Case  | Average Case | Worst Case | Space Complexity | Stable? | Notes                         |
+| ------------------ | ---------- | ------------ | ---------- | ---------------- | ------- | ----------------------------- |
+| **Bubble Sort**    | O(n)       | O(n²)        | O(n²)      | O(1)             | Yes     | Compare adjacent elements     |
+| **Selection Sort** | O(n²)      | O(n²)        | O(n²)      | O(1)             | No      | Finds min/max each pass       |
+| **Insertion Sort** | O(n)       | O(n²)        | O(n²)      | O(1)             | Yes     | Good for nearly sorted arrays |
+| **Merge Sort**     | O(n log n) | O(n log n)   | O(n log n) | O(n)             | Yes     | Divide & conquer              |
+| **Quick Sort**     | O(n log n) | O(n log n)   | O(n²)      | O(log n)         | No      | Divide & conquer, pivot-based |
+| **Heap Sort**      | O(n log n) | O(n log n)   | O(n log n) | O(1)             | No      | Uses max/min heap             |
+| **Counting Sort**  | O(n+k)     | O(n+k)       | O(n+k)     | O(k)             | Yes     | Only for integers in a range  |
+| **Radix Sort**     | O(nk)      | O(nk)        | O(nk)      | O(n+k)           | Yes     | Uses counting sort internally |
+| **Shell Sort**     | O(n log n) | O(n^(3/2))   | O(n²)      | O(1)             | No      | Gap-based insertion sort      |
+
+
+  <------------------------------------------------------Searching--------------------------------------------------->
+  | Algorithm                | Best Case | Average Case | Worst Case | Space Complexity                    | Notes                                         |
+| ------------------------ | --------- | ------------ | ---------- | ----------------------------------- | --------------------------------------------- |
+| **Linear Search**        | O(1)      | O(n)         | O(n)       | O(1)                                | Works on **unsorted arrays**                  |
+| **Binary Search**        | O(1)      | O(log n)     | O(log n)   | O(1) iterative / O(log n) recursive | Requires **sorted array**                     |
+| **Jump Search**          | O(1)      | O(√n)        | O(√n)      | O(1)                                | Works on sorted arrays                        |
+| **Interpolation Search** | O(1)      | O(log log n) | O(n)       | O(1)                                | Works on sorted, uniformly distributed arrays |
+| **Exponential Search**   | O(1)      | O(log n)     | O(log n)   | O(1)                                | Works on sorted arrays                        |
+| **Fibonacci Search**     | O(1)      | O(log n)     | O(log n)   | O(1)                                | Works on sorted arrays                        |
+
+  1️⃣ Best Case
+
+Definition: The scenario where the algorithm does the minimum amount of work possible.
+
+Sorting Example:
+
+Insertion Sort: If the array is already sorted, it just checks each element and does no swaps → O(n).
+
+Searching Example:
+
+Linear Search: If the element you’re looking for is the first element, the search stops immediately → O(1).
+
+✅ Think: “The algorithm is super lucky.”
+
+2️⃣ Average Case
+
+Definition: The typical scenario for the algorithm, assuming inputs are random or not specially arranged.
+
+Sorting Example:
+
+Quick Sort: On a random array, it usually splits the array fairly evenly → O(n log n).
+
+Searching Example:
+
+Linear Search: On average, you’ll check half the elements before finding the target → O(n/2) ≈ O(n).
+
+✅ Think: “What usually happens if I pick a random array?”
+
+3️⃣ Worst Case
+
+Definition: The scenario where the algorithm does the maximum amount of work possible.
+
+Sorting Example:
+
+Quick Sort: If the array is already sorted and you always pick the first element as pivot → O(n²).
+
+Searching Example:
+
+Linear Search: If the element is at the end or not present, you check all n elements → O(n).
+
+✅ Think: “The algorithm is really unlucky or the data is tricky.”
+
+4️⃣ Space Complexity
+
+Definition: The amount of extra memory the algorithm needs in addition to the input.
+
+Sorting Example:
+
+Merge Sort: Needs O(n) extra space to store temporary arrays.
+
+Heap Sort: Works in-place → O(1) extra space.
+
+Searching Example:
+
+Binary Search (iterative): O(1) extra space.
+
+Binary Search (recursive): O(log n) space because of recursion stack.
+
+✅ Think: “How much extra room does the algorithm need?”
+
+5️⃣ Stable? (Only for sorting)
+
+Definition: A sorting algorithm is stable if it preserves the order of equal elements.
+
+Example:
+
+Array: [5a, 3, 5b, 2] → after sorting stably: [2, 3, 5a, 5b].
+
+Stable Sorts: Bubble Sort, Merge Sort, Insertion Sort
+
+Unstable Sorts: Quick Sort, Heap Sort, Selection Sort
+
+✅ Think: “Do duplicates keep their original order?”
