@@ -168,6 +168,7 @@ int main() {
     int *arr1 =(int *)calloc(n,sizeof(int));
     if(arr1 == NULL){
         printf("Memory allocation failed..");
+        free(arr);
         return 1;
     }
     else{
@@ -179,7 +180,16 @@ int main() {
     for(int i = 0;i<n;i++){
         printf("%d\v",arr1[i]);
     }
-    arr = (int *)realloc(arr,n*sizeof(int));
+    /* Use a temporary pointer so arr is not lost if realloc fails */
+    int *tmp = (int *)realloc(arr, n * sizeof(int));
+    if(tmp == NULL){
+        printf("Reallocation failed..");
+        free(arr);
+        free(arr1);
+        return 1;
+    }
+    free(tmp);
+    free(arr1);
     return 0;
     
 }

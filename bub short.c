@@ -12,20 +12,25 @@ int main()
        printf("Enter %d index value in array:",i);
         scanf("%d",&arr[i]);
     }
-    for(i =n; i >= 0; i--)
+    /* Optimised bubble sort: shrink the unsorted range each pass and
+       stop early if no swap occurred (already-sorted input: O(n)). */
+    for(i = n - 1; i > 0; i--)
     {
-        for(int j = 0 ; j <= n-1; j++)
+        int swapped = 0;
+        for(int j = 0; j < i; j++)
         {
             if(arr[j] > arr[j+1])
             {
              temp = arr[j];
              arr[j] = arr[j+1];
              arr[j+1] = temp;
+             swapped = 1;
             }
         }
+        if(!swapped) break;
     }
     printf("Sorted array:\n");
-    for(i = 0; i <= n; i++)
+    for(i = 0; i < n; i++)
     {
     printf("%d\n",arr[i]);
     }

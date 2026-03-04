@@ -1,13 +1,18 @@
 #include <stdio.h>
 
-int main() {
-    int x = 12,y= 19,z = 36;
-    int gcd = 1;
-    for(int i = 1;i<= x && i<=y && i<=z;i++){
-        if(x%i== 0&& y%i== 0&& z%i== 0){
-            gcd = i;
-        }
+/* Euclidean algorithm: O(log(min(a,b))) instead of O(min(a,b)) */
+int gcd(int a, int b) {
+    while (b != 0) {
+        int t = b;
+        b = a % b;
+        a = t;
     }
-    printf("%d",gcd);
+    return a;
+}
+
+int main() {
+    int x = 12, y = 19, z = 36;
+    int result = gcd(gcd(x, y), z);
+    printf("%d", result);
     return 0;
 }
