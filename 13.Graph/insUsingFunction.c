@@ -1,12 +1,12 @@
 #include <stdio.h>
 int graph[3][3]= {0};
-void inisializeGraph(int graph[3][3],int m,int n){
+void addEdges(int graph[3][3],int m,int n){
     graph[m][n]=1;
     graph[n][m]=1;
 }
 int main() {
     
-      inisializeGraph(graph,0,2);
+      addEdges(graph,0,2);
     for(int i = 0 ; i < 3;i++){
         for(int j = 0 ; j < 3 ; j++){
             printf("%d ",graph[i][j]);
