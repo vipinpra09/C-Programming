@@ -17,7 +17,7 @@ A structured collection of C programming practice programs, data structures, alg
 | `09-file-handling` | File handling and file-based data programs |
 | `10-strings` | String manipulation programs |
 | `11-reference` | Notes, instructions, and course material |
-| `12-Tree` | Binary Treeand Binary Search Tree|
+| `12-Tree` | Binary Tree and Binary Search Tree|
 
 ## Data Structures
 
