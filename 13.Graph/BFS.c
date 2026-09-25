@@ -10,14 +10,14 @@ void bfs(int graph[MAX][MAX], int ver , int start){
 
     visited[start] = 1;
     queue[rear] = start;
-    rear++:
+    rear++;
 
         while(front < rear){
         int current = queue[front];
         front++;
     printf("%d ",current);
     for(int i = 0 ; i < ver;i++){
-        if(graph[current][i] == 1 && visited[i] = 0){
+        if(graph[current][i] == 1 && visited[i] == 0){
             visited[i] = 1;
             queue[rear] = i;
             rear++;
@@ -27,6 +27,7 @@ void bfs(int graph[MAX][MAX], int ver , int start){
 }
 int main() {
     int graph[MAX][MAX] = {0};
+    int ver = MAX;
     graph[1][2] = 1;
     graph[2][1] = 1;
     
